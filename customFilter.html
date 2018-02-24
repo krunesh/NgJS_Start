@@ -7,6 +7,7 @@
     <title>Custom Filter</title>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/customFilter.js"></script>
+    <script src="Scripts/Filters.js"></script>
 </head>
 <body ng-app="myModule">
         <link rel="stylesheet" href="Styles/style.css">
@@ -22,7 +23,7 @@
             <tbody>
                     <tr ng-repeat="employee in employees">
                         <td>{{employee.name}}</td>
-                        <td>{{employee.gender}}</td>
+                        <td>{{employee.gender | gender}}</td>
                         <td>{{employee.salary}}</td>
                     </tr>
             </tbody>
