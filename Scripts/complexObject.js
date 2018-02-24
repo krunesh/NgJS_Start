@@ -1,4 +1,4 @@
-// One way to doing this
+// One way of doing this
 // var myApp = angular.module("myModule",[]);
 
 // myApp.controller("myController",function($scope){
@@ -9,7 +9,7 @@
 // };
 
 
-// Another way Method chaining
+// Another way (Method chaining)
 
 var myApp = angular
             .module("myModule",[])
