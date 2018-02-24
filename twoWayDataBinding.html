@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Two Way Data Binding </title>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/twoWayDataBinding.js"></script>
+</head>
+<body ng-controller="myController">
+    <!-- <div><input type="text" ng-model="message"></div> -->
+    <!-- <div><input type="text" ng-model="greeting"></div>
+        {{message}}<br/><br/>
+        {{greeting}} -->
+<table>
+    <tr>
+        <td>First Name</td>
+        <td><input type="text" ng-model="employee.firstName"></td>
+    </tr>
+    <tr>
+            <td>Last Name</td>
+            <td><input type="text" ng-model="employee.lastName"></td>
+        </tr>
+
+        <tr>
+                <td>Gender</td>
+                <td><input type="text" ng-model="employee.gender"></td>
+            </tr>
+
+</table>
+
+<br>
+<table>
+        <tr>
+            <td>First Name</td>
+            <td>{{employee.firstName}}</td>
+        </tr>
+        <tr>
+                <td>Last Name</td>
+                <td>{{employee.lastName}}</td>
+            </tr>
+    
+            <tr>
+                    <td>Gender</td>
+                    <td>{{employee.gender}}</td>
+                </tr>
+                
+    </table>
+        
+</body>
+</html>

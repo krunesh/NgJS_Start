@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sorting data by table header</title>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/sortRowsByTableHeader.js"></script>
+    </head>
+<body ng-app = "myModule">
+    <link rel="stylesheet" href="Styles/style.css">
+    <div ng-controller = "myController">     
+         <table>
+           <thead>
+               <tr>
+                   <th ng-click="sortData('name')">Name<div ng-class="getSortClass('name')"></div></th>
+                   <th ng-click="sortData('dateOfBirth')">DateOfBirth<div ng-class="getSortClass('dateOfBirth')"></div></th>
+                   <th ng-click="sortData('gender')">Gender<div ng-class="getSortClass('gender')"></div></th>
+                   <th ng-click="sortData('salary')">Salary (number)<div ng-class="getSortClass('salary')"></div></th>                   
+               </tr>
+           </thead>
+
+           <tbody>
+               <!-- Use 'false' for acending order and 'true' for decending order -->
+                <!-- <tr data-ng-repeat="employee in employees | orderBy:'name':false "> -->
+                    <!-- Use plus for acending and minus for decending -->
+                <!-- <tr data-ng-repeat="employee in employees | orderBy:'+name'">  -->
+
+                    <tr ng-repeat="employee in employees | orderBy : sortColumn:reverseSort">
+                    <td>{{employee.name | uppercase}}</td>
+                    <td>{{employee.dateOfBirth | date:"dd/MM/yyyy" }}</td>
+                    <td>{{employee.gender | lowercase}}</td>
+                    <td>{{employee.salary | number:2}}</td>                  
+                </tr>
+            </tbody>
+       </table>  
+    </div>
+</body>
+</html>

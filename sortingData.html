@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sorting Data</title>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/sortingData.js"></script>
+    </head>
+<body ng-app = "myModule">
+    <link rel="stylesheet" href="Styles/style.css">
+    <div ng-controller = "myController">
+        Sort By: 
+        <select ng-model="sortColumn">
+            <option value="name">Name ASC</option>
+            <option value="gender">Gender ASC</option>
+            <option value="dateOfBirth">Date Of Birth ASC</option>
+            <option value="-salary">Salary DESC</option>
+        </select>
+        <br/>
+       <table>
+           <thead>
+               <tr>
+                   <th>Name</th>
+                   <th>DateOfBirth</th>
+                   <th>Gender</th>
+                   <th>Salary (number)</th>                   
+               </tr>
+           </thead>
+
+           <tbody>
+               <!-- Use 'false' for acending order and 'true' for decending order -->
+                <!-- <tr data-ng-repeat="employee in employees | orderBy:'name':false "> -->
+                    <!-- Use plus for acending and minus for decending -->
+                <!-- <tr data-ng-repeat="employee in employees | orderBy:'+name'">  -->
+
+                    <tr ng-repeat="employee in employees | orderBy : sortColumn">
+                    <td>{{employee.name | uppercase}}</td>
+                    <td>{{employee.dateOfBirth | date:"dd/MM/yyyy" }}</td>
+                    <td>{{employee.gender | lowercase}}</td>
+                    <td>{{employee.salary | number:2}}</td>                  
+                </tr>
+            </tbody>
+       </table>  
+    </div>
+</body>
+</html>
